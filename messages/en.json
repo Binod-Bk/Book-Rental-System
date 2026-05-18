@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Home",
+    "catalogue": "Browse Books",
+    "cart": "Cart",
+    "dashboard": "My Rentals",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "sellBoard": "Sell a Book",
+    "locations": "Pickup Locations",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": "Rent a Book. Save Money. Share Knowledge.",
+    "heroSub": "Textbooks for Rs. 100 · 21 days · Pickup at partner cafes & libraries",
+    "howItWorks": "How It Works",
+    "featuredBooks": "Featured Books",
+    "partnerLocations": "Pickup Locations"
+  },
+  "book": {
+    "rentFee": "Rent Fee",
+    "deposit": "Deposit",
+    "available": "copies available",
+    "unavailable": "Currently unavailable",
+    "addToCart": "Add to Cart",
+    "addToWishlist": "Add to Wishlist",
+    "condition": "Condition",
+    "conditions": {
+      "new": "New",
+      "good": "Good",
+      "acceptable": "Acceptable"
+    },
+    "depositNote": "Pay Rs. {deposit} deposit — get Rs. {refund} back on return"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "pickupLocation": "Select Pickup Location",
+    "rentFee": "Rent Fee",
+    "deposit": "Deposit",
+    "total": "Total to Pay",
+    "checkout": "Proceed to Checkout"
+  },
+  "checkout": {
+    "review": "Review Order",
+    "details": "Contact Details",
+    "pay": "Pay",
+    "payWith": "Pay with {gateway}"
+  },
+  "dashboard": {
+    "activeRentals": "Active Rentals",
+    "history": "Rental History",
+    "wishlist": "Wishlist",
+    "notifications": "Notifications",
+    "daysLeft": "{days} days left",
+    "overdue": "Overdue",
+    "returnBy": "Return by {date}",
+    "renew": "Renew",
+    "depositRefunded": "Deposit Refunded",
+    "depositPending": "Deposit Pending"
+  },
+  "auth": {
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "login": "Login",
+    "register": "Create Account",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  },
+  "sellBoard": {
+    "title": "Books We Want to Buy",
+    "subtitle": "Sell your used books to us",
+    "wantToSell": "I Want to Sell This",
+    "priceRange": "We offer",
+    "condition": "Condition needed"
+  },
+  "locations": {
+    "title": "Pickup & Return Locations",
+    "subtitle": "Pick up and return your books at these partner locations",
+    "type": {
+      "library": "Library",
+      "cafe": "Cafe"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All"
+  }
+}

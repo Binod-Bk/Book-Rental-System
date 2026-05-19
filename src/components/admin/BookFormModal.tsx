@@ -120,7 +120,7 @@ export default function BookFormModal({ book, onClose, onSaved }: BookFormModalP
               value={form.title}
               onChange={(e) => set('title', e.target.value)}
               placeholder="e.g. Engineering Mathematics I"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -132,7 +132,7 @@ export default function BookFormModal({ book, onClose, onSaved }: BookFormModalP
               value={form.author}
               onChange={(e) => set('author', e.target.value)}
               placeholder="e.g. H.K. Dass"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -145,7 +145,7 @@ export default function BookFormModal({ book, onClose, onSaved }: BookFormModalP
               value={form.isbn}
               onChange={(e) => set('isbn', e.target.value)}
               placeholder="978-XXXXXXXXXX"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -156,7 +156,7 @@ export default function BookFormModal({ book, onClose, onSaved }: BookFormModalP
               <select
                 value={form.category}
                 onChange={(e) => set('category', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
               >
                 {CATEGORIES.map((c) => <option key={c}>{c}</option>)}
               </select>
@@ -166,7 +166,7 @@ export default function BookFormModal({ book, onClose, onSaved }: BookFormModalP
               <select
                 value={form.college}
                 onChange={(e) => set('college', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
               >
                 <option value="">— Any —</option>
                 {COLLEGES.map((c) => <option key={c}>{c}</option>)}
@@ -207,7 +207,7 @@ export default function BookFormModal({ book, onClose, onSaved }: BookFormModalP
               max={999}
               value={form.quantity}
               onChange={(e) => set('quantity', parseInt(e.target.value) || 1)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 

@@ -201,7 +201,7 @@ export default function AdminLocationsPage() {
                   value={form.name}
                   onChange={(e) => set('name', e.target.value)}
                   placeholder="e.g. Kathmandu Public Library"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -236,7 +236,7 @@ export default function AdminLocationsPage() {
                   value={form.address}
                   onChange={(e) => set('address', e.target.value)}
                   placeholder="e.g. Bagh Bazaar, Kathmandu"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -248,7 +248,7 @@ export default function AdminLocationsPage() {
                   value={form.contact}
                   onChange={(e) => set('contact', e.target.value)}
                   placeholder="01-XXXXXXX or 98XXXXXXXX"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 

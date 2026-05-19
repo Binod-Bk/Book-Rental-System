@@ -4,12 +4,16 @@ import { createServerClient } from '@supabase/ssr'
 // Routes that require a logged-in user
 const PROTECTED_USER_ROUTES = ['/dashboard']
 
-// Routes that require admin role
+// Routes that require admin role (/admin/login is excluded — it's public)
 const PROTECTED_ADMIN_ROUTES = ['/admin']
+const PUBLIC_ADMIN_ROUTES = ['/admin/login']
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   const response = NextResponse.next({ request })
+
+  // /admin/login is public — skip all checks
+  if (PUBLIC_ADMIN_ROUTES.some((r) => pathname.startsWith(r))) return response
 
   const isUserRoute = PROTECTED_USER_ROUTES.some((r) => pathname.startsWith(r))
   const isAdminRoute = PROTECTED_ADMIN_ROUTES.some((r) => pathname.startsWith(r))
@@ -35,6 +39,10 @@ export async function proxy(request: NextRequest) {
     const { data: { user } } = await supabase.auth.getUser()
 
     if (!user) {
+      // Admin routes redirect to /admin/login, user routes to /login
+      if (isAdminRoute) {
+        return NextResponse.redirect(new URL('/admin/login', request.url))
+      }
       const loginUrl = new URL('/login', request.url)
       loginUrl.searchParams.set('redirect', pathname)
       return NextResponse.redirect(loginUrl)
@@ -48,7 +56,7 @@ export async function proxy(request: NextRequest) {
         .single()
 
       if (!profile || profile.role !== 'admin') {
-        return NextResponse.redirect(new URL('/dashboard', request.url))
+        return NextResponse.redirect(new URL('/admin/login', request.url))
       }
     }
   } catch {

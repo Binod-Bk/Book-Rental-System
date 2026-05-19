@@ -158,7 +158,7 @@ export default function BookFormModal({ book, onClose, onSaved }: BookFormModalP
                 onChange={(e) => set('category', e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
               >
-                {CATEGORIES.map((c) => <option key={c}>{c}</option>)}
+                {CATEGORIES.map((c) => <option key={c} className="text-gray-900">{c}</option>)}
               </select>
             </div>
             <div>
@@ -168,8 +168,8 @@ export default function BookFormModal({ book, onClose, onSaved }: BookFormModalP
                 onChange={(e) => set('college', e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
               >
-                <option value="">— Any —</option>
-                {COLLEGES.map((c) => <option key={c}>{c}</option>)}
+                <option value="" className="text-gray-900">— Any —</option>
+                {COLLEGES.map((c) => <option key={c} className="text-gray-900">{c}</option>)}
               </select>
             </div>
           </div>

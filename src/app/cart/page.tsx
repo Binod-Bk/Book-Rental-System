@@ -142,22 +142,26 @@ export default function CartPage() {
 
               <div className="space-y-3 text-sm mb-4">
                 <div className="flex justify-between text-gray-600">
-                  <span>Rental fee (21 days)</span>
-                  <span className="font-medium text-gray-900">Rs. {RENT_FEE}</span>
-                </div>
-                <div className="flex justify-between text-gray-600">
-                  <span>Refundable deposit</span>
+                  <span>Deposit (paid upfront)</span>
                   <span className="font-medium text-gray-900">Rs. {deposit}</span>
                 </div>
+                <div className="flex justify-between text-gray-400 text-xs">
+                  <span>Refund on return</span>
+                  <span className="text-green-600 font-medium">− Rs. {refund}</span>
+                </div>
+                <div className="flex justify-between text-gray-400 text-xs">
+                  <span>Rental fee (kept)</span>
+                  <span>Rs. {RENT_FEE}</span>
+                </div>
                 <div className="border-t pt-3 flex justify-between font-bold text-base text-gray-900">
-                  <span>Total</span>
+                  <span>Total to pay now</span>
                   <span className="text-blue-700">Rs. {totalAmount}</span>
                 </div>
               </div>
 
               <div className="bg-green-50 border border-green-100 rounded-xl p-3 mb-4">
                 <p className="text-xs text-green-700 leading-relaxed">
-                  💚 Get <span className="font-bold">Rs. {refund}</span> back when you return the book on time.
+                  💚 Return the book within 21 days and get <span className="font-bold">Rs. {refund}</span> back. You only keep Rs. {RENT_FEE} as rent.
                 </p>
               </div>
 

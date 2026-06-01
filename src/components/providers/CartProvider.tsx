@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, useCallback } from 'react'
-import { Book, DepositTier, DEPOSIT_AMOUNTS, RENT_FEE } from '@/types'
+import { Book, DepositTier, DEPOSIT_AMOUNTS } from '@/types'
 
 export interface CartItem {
   book: Book
@@ -61,10 +61,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const clearCart = useCallback(() => save(null), [])
 
+  // User pays deposit only. Rental fee (Rs.100) is deducted from the refund.
   const depositAmount = cartItem
     ? DEPOSIT_AMOUNTS[cartItem.book.deposit_tier as DepositTier]
     : 0
-  const totalAmount = cartItem ? RENT_FEE + depositAmount : 0
+  const totalAmount = depositAmount
 
   return (
     <CartContext.Provider

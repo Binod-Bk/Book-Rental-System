@@ -109,12 +109,12 @@ export default async function BookDetailPage({ params }: Props) {
               <h2 className="font-semibold text-gray-900 mb-4">Rental Details</h2>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="bg-white rounded-xl p-4 text-center border border-blue-100">
-                  <p className="text-2xl font-bold text-blue-600">Rs. {RENT_FEE}</p>
-                  <p className="text-sm text-gray-500 mt-0.5">Rental fee</p>
+                  <p className="text-2xl font-bold text-blue-600">Rs. {deposit}</p>
+                  <p className="text-sm text-gray-500 mt-0.5">Pay upfront</p>
                 </div>
                 <div className="bg-white rounded-xl p-4 text-center border border-blue-100">
-                  <p className="text-2xl font-bold text-gray-800">Rs. {deposit}</p>
-                  <p className="text-sm text-gray-500 mt-0.5">Refundable deposit</p>
+                  <p className="text-2xl font-bold text-green-600">Rs. {refund}</p>
+                  <p className="text-sm text-gray-500 mt-0.5">Get back on return</p>
                 </div>
               </div>
 
@@ -124,12 +124,12 @@ export default async function BookDetailPage({ params }: Props) {
                   <span className="font-medium text-gray-900">{RENTAL_PERIOD_DAYS} days</span>
                 </div>
                 <div className="flex justify-between text-gray-600">
-                  <span>Deposit refund on return</span>
-                  <span className="font-medium text-green-700">Rs. {refund} back</span>
+                  <span>Effective rental cost</span>
+                  <span className="font-medium text-gray-900">Rs. {RENT_FEE} <span className="text-gray-400 font-normal text-xs">(deposit − refund)</span></span>
                 </div>
                 <div className="border-t pt-2 flex justify-between font-semibold text-gray-900">
                   <span>Total to pay now</span>
-                  <span className="text-blue-700">Rs. {total}</span>
+                  <span className="text-blue-700">Rs. {deposit}</span>
                 </div>
               </div>
 

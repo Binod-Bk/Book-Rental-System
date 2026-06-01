@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import PublicLayout from '@/components/layout/PublicLayout'
 import { useCart } from '@/components/providers/CartProvider'
 import { useAuth } from '@/components/providers/AuthProvider'
-import { RENT_FEE, DEPOSIT_AMOUNTS, DEPOSIT_REFUNDS, RENTAL_PERIOD_DAYS } from '@/types'
+import { DEPOSIT_AMOUNTS, DEPOSIT_REFUNDS, RENTAL_PERIOD_DAYS } from '@/types'
 
 type Gateway = 'esewa' | 'khalti'
 
@@ -157,13 +157,13 @@ export default function CheckoutPage() {
 
               <div className="space-y-2 text-sm mb-4">
                 <div className="flex justify-between text-gray-600">
-                  <span>Rental fee</span><span className="font-medium">Rs. {RENT_FEE}</span>
+                  <span>Deposit (upfront)</span><span className="font-medium">Rs. {deposit}</span>
                 </div>
-                <div className="flex justify-between text-gray-600">
-                  <span>Deposit</span><span className="font-medium">Rs. {deposit}</span>
+                <div className="flex justify-between text-gray-400 text-xs">
+                  <span>Refund on return</span><span className="text-green-600 font-medium">− Rs. {DEPOSIT_REFUNDS[book.deposit_tier]}</span>
                 </div>
                 <div className="border-t pt-2 flex justify-between font-bold text-base">
-                  <span>Total</span>
+                  <span>Total to pay</span>
                   <span className="text-blue-700">Rs. {totalAmount}</span>
                 </div>
               </div>

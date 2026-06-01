@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Book, DEPOSIT_AMOUNTS, RENT_FEE } from '@/types'
+import { Book, DEPOSIT_AMOUNTS, DEPOSIT_REFUNDS } from '@/types'
 
 const CONDITION_STYLES: Record<string, string> = {
   new: 'bg-green-100 text-green-700',
@@ -20,6 +20,7 @@ interface BookCardProps {
 
 export default function BookCard({ book }: BookCardProps) {
   const deposit = DEPOSIT_AMOUNTS[book.deposit_tier]
+  const refund  = DEPOSIT_REFUNDS[book.deposit_tier]
   const isAvailable = book.quantity > 0
 
   return (
@@ -80,8 +81,8 @@ export default function BookCard({ book }: BookCardProps) {
         {/* Pricing */}
         <div className="mt-auto">
           <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
-            <span>Rent: <span className="font-semibold text-gray-800">Rs. {RENT_FEE}</span></span>
-            <span>Deposit: <span className="font-semibold text-gray-800">Rs. {deposit}</span></span>
+            <span>Pay: <span className="font-semibold text-gray-800">Rs. {deposit}</span></span>
+            <span>Get back: <span className="font-semibold text-green-700">Rs. {refund}</span></span>
           </div>
 
           <Link

@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/server'
 import PublicLayout from '@/components/layout/PublicLayout'
 import { Book, PickupLocation, DEPOSIT_AMOUNTS, DEPOSIT_REFUNDS, RENT_FEE, RENTAL_PERIOD_DAYS } from '@/types'
 import AddToCartButton from './AddToCartButton'
+import WishlistButton from './WishlistButton'
 
 const CONDITION_STYLES: Record<string, string> = {
   new: 'bg-green-100 text-green-700',
@@ -133,7 +134,10 @@ export default async function BookDetailPage({ params }: Props) {
                 </div>
               </div>
 
-              <AddToCartButton book={book as Book} isAvailable={isAvailable} />
+              <div className="space-y-3">
+                <AddToCartButton book={book as Book} isAvailable={isAvailable} />
+                <WishlistButton bookId={book.id} />
+              </div>
             </div>
 
             {/* Pickup locations */}

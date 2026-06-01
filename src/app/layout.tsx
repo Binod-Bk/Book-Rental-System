@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { AuthProvider } from "@/components/providers/AuthProvider";
+import { CartProvider } from "@/components/providers/CartProvider";
 import "./globals.css";
 
 const geist = Geist({
@@ -28,7 +29,9 @@ export default async function RootLayout({
     <html lang={locale} className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-gray-900">
         <NextIntlClientProvider messages={messages}>
-          <AuthProvider>{children}</AuthProvider>
+          <AuthProvider>
+            <CartProvider>{children}</CartProvider>
+          </AuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>
